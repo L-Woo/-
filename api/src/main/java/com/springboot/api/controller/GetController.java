@@ -4,6 +4,8 @@ import com.springboot.api.dto.MemberDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -12,18 +14,23 @@ import java.util.Map;
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
+    private final Logger logger = LoggerFactory.getLogger(GetController.class);
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String getHello() {
+        logger.info("getHello 메서드가 호출되었습니다.");
         return "Hello World";
     }
 
-    @GetMapping("name")
+    @GetMapping("/name")
     public String getName() {
+        logger.info("getName 메서드가 호출되었습니다.");
         return "Flature";
     }
 
     @GetMapping(value = "/variable1/{variable}")
     public String getVariable1(@PathVariable String variable) {
+        logger.info("@PathVariable을 통해 들어온 값 : {}", variable);
         return variable;
     }
 
