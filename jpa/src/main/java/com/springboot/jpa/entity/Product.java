@@ -1,11 +1,13 @@
 package com.springboot.jpa.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product")
+@Builder
 public class Product {
 
     @Id
@@ -48,4 +50,5 @@ public class Product {
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
+
 }
