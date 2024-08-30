@@ -2,10 +2,12 @@ package com.springboot.jpa.data.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 @Builder
 public class ProductDto {
 
@@ -13,15 +15,4 @@ public class ProductDto {
     private int price;
     private int stock;
 
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getStock() {
-        return stock;
-    }
 }
